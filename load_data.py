@@ -48,9 +48,6 @@ def get_loader_source(batch_size, base_path, domain_name):
     return source_loader, n_class, dim_fea
 
 def get_loader_target(batch_size, base_path, domain_name):
-    # base_path = '/media/zl/9CCC203CCC2012D6/ch2018/001_datasets/D005_02_OfficeHome_mat/'
-    # domain_name = 'Art'
-    # Art_feature_mat.mat / Clipart_feature_mat.mat / Product_feature_mat.mat / Real_World_feature_mat.mat
     path = base_path + domain_name + '_feature.mat'
 
     # 读取.mat文件
@@ -64,7 +61,7 @@ def get_loader_target(batch_size, base_path, domain_name):
     label_tensor = torch.from_numpy(data['label'])
     # label_tensor = torch.from_numpy(data['label']).squeeze().unsqueeze(dim=1)
 
-    if base_path == '/data/CuiHui/OfficeHome_mat/':
+    if base_path == '/datasets/OfficeHome_mat/':
         label_tensor = label_tensor.T
 
     # 创建训练集和测试集
