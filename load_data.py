@@ -27,7 +27,7 @@ def get_loader_source(batch_size, base_path, domain_name):
     data_tensor = torch.from_numpy(data['deepfea'])
     label_tensor = torch.from_numpy(data['label'])
 
-    if base_path == '/data/CuiHui/OfficeHome_mat/':
+    if base_path == '/datasets/OfficeHome_mat/':
         label_tensor = label_tensor.T
 
     # 创建CustomDataSet对象
